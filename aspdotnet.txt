@@ -1,0 +1,341 @@
+suuRestfull api fundementaals 
+HTTP,url,cors
+Building restful wev=bservvice using Asp.net.code 
+Middleware, configuration , di 
+logging,swagger 
+OWASP 
+Unit testing (Xunit /Nunit)
+
+
+4 kinds od memeber in the class
+feilds 
+constructure 
+methods and events 
+
+http -> text , request response model, url+header+Body 
+
+address - based -> url          
+Name - based ->  urn 
+Uri - identifier
+
+en.nw.news.google.co.in
+REST IS SIMOLE SET OF RULLS
+
+its is used to standerdized the service 
+web service is called as restfull api which provieed the service 
+
+3 constarints of teh restfulll webservice 
+1> unique Url
+2> proper Http Methods
+3> proper media types
+
+
+C-> POST
+R -> GET
+U -> PUT / PATCH
+D -> DELETE
+
+IS A JSON FILE AND PDF FILE
+
+
+
+importance aspects of asp.net core:
+1 middle ware  : Middleware is software that's assembled into an app pipeline to handle requests and responses. 
+Each component:
+Chooses whether to pass the request to the next component in the pipeline.
+Can perform work before and after the next component in the pipeline.
+Request delegates are used to build the request pipeline. The request delegates handle each HTTP request.
+2 configuration  
+3 dependency injection 
+4 logging 
+5 documantation 
+
+terminal middle ware : which will create the response 
+non terminal middleware : which will call farward the process 
+
+
+everything is AN aspdotnet is a midle ware 
+
+Converting obejct to josn is serialization 
+converting json to object is known as de-serialization 
+
+
+minimal api approach to Asp.Net core 6 
+dependency injection 
+logging sinks 
+swagger documentation 
+
+Configuration 
+middleware 
+
+handson-> database backed n - tier application (RESTfull webservice)
+
+
+how to secure teh web application 
+Owasp top 10
+defense in septh principle
+software testing 
+unit testing 
+unit testing Hnads -on 
+Review of topics 
+
+Shamita
+1. document -> private key -> ciphertext (A)PPPPP
+2. ciphertext (A) -> public key (Suchit) -> ciphertext (B)
+ 
+Suchit
+3. ciphertext (B) -> private key -> ciphertext (A)
+4. ciphertext (A) -> public key (Shamita) -> document
+ 
+
+Use the encryption/decryption of hash
+ 
+
+Shamita
+1. document -> hash -> private key -> ciphertext (A)
+2. document + ciphertext (A) -> public key (Suchit) -> ciphertext (B)
+ 
+Suchit
+3. ciphertext (B) -> private key -> ciphertext (A) + document
+4. ciphertext (A) -> public key (Shamita) -> hash
+5. document -> hash -> compare the hashes
+has context menu
+
+Enterprise Service Bus
+
+Small services that work together : micro services 
+
+USE CASE block 
+
+product item value 
+essential scrum
+
+1) independent depolyability 
+2) Data independence : it should be indepent     
+3) Polyglot System  :- multi talented  ;- it should be worked in  other language 
+breaking down the monolith to get to achve the micro algo 
+
+Ddd was written for micor services
+BUSNISS CAPABILITEIS 
+DESI=CIRT INDPEMENT ]
+bounded context whcich is eighlyy cone test 
+-the aink 
+
+
+Synchronus and Asynchronus communication
+unit tetsing using Xunit/Nunit with Nsubstistute ?moq
+Microservice introduction hands on 12  factor app , REST communication 
+Message quqes and asynchronous communication , GRPC , data stratagies
+Patterns : introdunction JSX components state Proprs Composotion 
+Components Communication , Styles routing 
+
+
+
+
+The more u get fool and the more u get stranger 
+
+
+topza stone 
+
+
+ddd distilled
+
+asp.net core 
+microservices 
+restfull api 
+devops and git 
+
+
+devops is a culture 
+stage called teh source controle . git miantaines teh version of teh code 
+remote repositries 
+
+
+build releas eand run cycle  : idea of devops 
+cloud : economy of teh scale : capx and opx 
+
+acr
+app servieces a
+
+kubernets 
+
+IAAS paas and saas 
+most of the time we use paas :Platform as a aservices 
+share responsibikity model  : security of the cloude and security in the cloud
+
+docker : contanerization : isolation 
+we build teh image and from image we wikll create the cintainer
+
+these are the things we learnt these days 
+
+
+using System.Collections.Generic;
+
+public class Checkout
+{
+    private static readonly List<KeyValuePair<char, int>> prices = new List<KeyValuePair<char, int>>
+    {
+        new KeyValuePair<char, int>('A', 50),
+        new KeyValuePair<char, int>('B', 30),
+        new KeyValuePair<char, int>('C', 20),
+        new KeyValuePair<char, int>('D', 15)
+    };
+
+    private static readonly List<KeyValuePair<char, int>> offers = new List<KeyValuePair<char, int>>
+    {
+        new KeyValuePair<char, int>('A', 130),
+        new KeyValuePair<char, int>('B', 45)
+    };
+
+    public int CalculateTotalPrice(string skus)
+    {
+        int totalPrice = 0;
+        int offerCount = 0;
+
+        foreach (char sku in skus)
+        {
+            bool found = false;
+
+            foreach (KeyValuePair<char, int> price in prices)
+            {
+                if (price.Key == sku)
+                {
+                    totalPrice += price.Value;
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                return -1;
+            }
+
+            if (sku == 'A')
+            {
+                offerCount++;
+            }
+        }
+
+        while (offerCount >= 3)
+        {
+            totalPrice -= 100;
+            offerCount -= 3;
+        }
+
+        return totalPrice;
+    }
+}
+In this implementation, we define two lists to store the price and offer information. The 
+prices
+ list maps each SKU to its corresponding price, and the 
+offers
+ list maps each SKU to its corresponding offer price.
+
+We then define a 
+CalculateTotalPrice
+ method that takes a string of SKUs as input and returns the total price of the items. The method iterates over the SKUs and adds the price of each item to a 
+totalPrice
+ variable. If an invalid SKU is encountered, the method returns -1 to indicate an error.
+
+The method also keeps track of the number of offers that have been applied, using a 
+offerCount
+ variable. If the 
+offerCount
+ is greater than or equal to 3, the method applies the offer to the total price by subtracting 100 from the 
+totalPrice
+ and decrementing the 
+offerCount
+ by 3.
+
+To test the 
+Checkout
+ class, we can use the following unit tests:
+
+Copy codeusing Xunit;
+
+public class CheckoutTest
+{
+    [Fact]
+    public void CalculateTotalPrice_ReturnsZeroForEmptyInput()
+    {
+        // Arrange
+        var checkout = new Checkout();
+
+        // Act
+        var totalPrice = checkout.CalculateTotalPrice("");
+
+        // Assert
+        Assert.Equal(0, totalPrice);
+    }
+
+    [Fact]
+    public void CalculateTotalPrice_ReturnsPriceForSingleItem()
+    {
+        // Arrange
+        var checkout = new Checkout();
+
+        // Act
+        var totalPrice = checkout.CalculateTotalPrice("A");
+
+        // Assert
+        Assert.Equal(50, totalPrice);
+    }
+
+    [Fact]
+    public void CalculateTotalPrice_ReturnsPriceForMultipleItems()
+    {
+        // Arrange
+        var checkout = new Checkout();
+
+        // Act
+        var totalPrice = checkout.CalculateTotalPrice("ABCD");
+
+        // Assert
+        Assert.Equal(140, totalPrice);
+    }
+
+    [Fact]
+    public void CalculateTotalPrice_ReturnsPriceForOffer()
+    {
+        // Arrange
+        var checkout = new Checkout();
+
+        // Act
+        var totalPrice = checkout.CalculateTotalPrice("AAA");
+
+        // Assert
+        Assert.Equal(130, totalPrice);
+    }
+
+    [Fact]
+    public void CalculateTotalPrice_ReturnsPriceForMultipleOffers()
+    {
+        // Arrange
+        var checkout = new Checkout();
+
+        // Act
+        var totalPrice = checkout.CalculateTotalPrice("AAAAA");
+
+        // Assert
+        Assert.Equal(200, totalPrice);
+    }
+
+    [Fact]
+    public void CalculateTotalPrice_ReturnsErrorForInvalidItem()
+    {
+        // Arrange
+        var checkout = new Checkout();
+
+        // Act
+        var totalPrice = checkout.CalculateTotalPrice("ABXX");
+
+        // Assert
+        Assert.Equal(-1, totalPrice);
+    }
+}
+These tests cover a range of scenarios, including empty input, single items, multiple items, offers, and invalid items. The tests use the 
+Assert
+ class to verify that the 
+CalculateTotalPrice
+ method returns the expected values.

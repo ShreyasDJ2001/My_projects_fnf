@@ -1,0 +1,55 @@
+it is used for building user interface 
+libraries is used in js 
+it is used for front end 
+independetn isolsated componentsv
+ 
+react element 
+dom elemenet 
+light weight represetn aof memory
+
+component is a block of code or a 
+isolated user inteface 
+(user interface ) And all the tiny user interface is combained to form a huge one 
+child components 
+
+after installing the react run the commmend
+create-react-app My-app
+after running there will be development server , WebPack for bundling our files , Babel for compli 
+webPack to store the files and Babel 
+
+after run NPM START
+
+
+import React from 'react';
+import ReactDom from 'react-dom';
+
+const element =<h1>hello there shreyas how u doing</h1>
+
+ReactDom.render(element,document.getElementById('root'));
+
+console.log(element);
+model reloading/////////
+
+after this 
+in index.js we wil import the bootstrap model 
+npm -i bootstrap// run this command and then import the file in index.js
+
+create a folder called component and in component create counter.jsx
+install the package //simple sinppit 
+imrc import react componrnt 
+cc for create class 
+
+
+the code will be linek this 
+import React, {Component} from 'react';`
+class Counter extends Component{
+state={}
+render(){
+return<h1> heelo ther shreyas </h1>;
+
+}
+}
+
+export default Counter;
+
+

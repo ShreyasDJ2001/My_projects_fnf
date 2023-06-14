@@ -1,0 +1,26 @@
+microservices : small and rest api 
+application program interface 
+rest: representational state transfer   : set of ruls 
+post = create the data 
+get  = read the data            post/PRODUCT HTTP /1.1
+put = update  the data      ---------------------------->
+delete = delete the data 
+
+CRUD 
+
+
+200-level success 
+400 level somthing wrong with our equest 
+500 level somthing wrong at the server level // serveice isnt available // it ask for retry 
+
+
+
+it msut be state less it should not store any data 
+
+limit and offset to specify the data 
+
+vesioning the api 
+i
+
+
+

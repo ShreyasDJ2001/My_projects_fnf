@@ -1,0 +1,49 @@
+using System;
+
+namespace PanVerification
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+
+            Console.Write("Enter PAN Number: ");
+            string panNumber = Console.ReadLine();
+            Console.Write("Enter Buyer's Name: ");
+            string buyerName = Console.ReadLine();
+
+
+            if (string.IsNullOrEmpty(panNumber) || string.IsNullOrEmpty(buyerName))
+            {
+                Console.WriteLine("enter the correct  details.");
+                return;
+            }
+
+            Console.WriteLine(panNumber.Length);
+            if (panNumber.Length != 10)
+            {
+                Console.WriteLine("PAN Number must be 10 characters long.");
+                return;
+            }
+
+            if (panNumber.Length < 5)
+            {
+                Console.WriteLine("PAN Number must be at least 5 characters long.");
+                return;
+            }
+
+            char firstLetterOfName = Convert.ToChar(panNumber.Substring(4, 1));
+
+            if (firstLetterOfName.ToString() != buyerName.Substring(0, 1))
+            {
+                Console.WriteLine("first letter of the name dose not match the pan number.");
+                return;
+            }
+
+            string responseMessage = $"The PAN Number {panNumber} is valid and matches the buyer's name.";
+
+
+            Console.WriteLine(responseMessage);
+        }
+    }
+}

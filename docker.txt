@@ -1,0 +1,120 @@
+docker version 
+
+image  :: docker image ls  //give the image list 
+container  :: docker cintainer ls 
+
+network  :: docker network ls 
+ volumes :: docker volume ls 
+
+ docker image pull nginx
+Using default tag: latest // if we dont mention the tags it will fetch the latest one vis
+
+docker container run --detach --publish  9000:80 name nginx my-nginx 
+So the container starts up and run in background. That means, you start up the container and could use the console after startup for other commands.
+in attach mode it will block the container 
+
+docker container stop my-nginx to stop the container exicution 
+
+docker container ls --all gives all containers information 
+
+
+docker container start Container_ID 
+
+Run: create a new container of an image, and execute the container. You can create N clones of the same image. The command is: docker run IMAGE_ID and not docker run CONTAINER_ID
+Start: Launch a container previously stopped. For example, if you had stopped a database with the command docker stop CONTAINER_ID, 
+you can relaunch the same container with the command docker start CONTAINER_ID, and the data and settings will be the same.
+
+
+docker container rm --force my-nginx which will remove teh cintainer from the local device 
+
+
+docker container logs happy_kepler   /// gives all the logs of the contianer 
+
+docker container inspect happy_kepler  // gives all the information of the happy_kepler container 
+
+docker container top happy_kepdic  /// gies all the running contaiener 
+
+docker container run ubuntu  // pulls ubuntu from docker hub 
+
+ docker container run --interactive --tty ubuntu   //// which will gose into the ubuntu cintainer 
+
+docker container ls   // this will show the startup script   A startup script is a file that performs tasks during the startup process of a virtual machine (VM) instance. 
+Startup scripts can apply to all VMs in a project or to a single VM. Startup scripts specified by VM-level metadata override startup scripts specified by project-level metadata, and startup scripts only run when a network is available.
+
+docker container top container_id  ///  this will give the processer that are running 
+
+docker container exec --interactive --tty loving_fermi sh // it will get into teh container  where sh will s=represent the shells
+
+
+dokcer container run --interactive --tty --voulme p-data:/mnt/p-data --name u-1 ubuntu  
+
+
+
+how to do the system administration with in ghe containers 
+
+apt update 
+apt install vim 
+
+i 
+
+after writing the datta 
+
+:wq! 
+
+cat foo
+
+exit 
+
+docker container run --interactive --tty --env VAR1=value1 --env VAR2=value2 --name u-3 ubuntu
+
+
+docker container run --detach --name my-nginx nginx
+
+docker network create my-net
+
+
+docker network connect my-net my-nginx // to connect the ubuntu to this network 
+
+\\\\\\\\\\\\\\\\\\\\this is for creatinng the netwokr and connecting the network with the ubuntu /////////////
+
+
+* docker network create my-net (create a network)
+* docker network connect my-net my-nginx (connect network to container)
+* docker container run --interactive --tty --name u-4 --network my-net ubuntu (run the network in a interactive mode)
+* apt update
+* apt install curl
+
+ 
+
+curl http://my-nginx ---> check the content 
+
+
+creat a react project and the in add a docker file in the project
+in the package.json in the script add the dockerize and then run the command // 
+
+
+
+
+
+
+dotnet publish -c release
+
+
+in this directory 
+
+dotnet publish -c release
+
+after open web application 1 in power shell and run the command docker image build --tag asp-net-mvc .
+
+after thsu run the container 
+
+docker image build --tag asp-net-mvc . //  building the image
+
+docker container run --detach --publish 9090:80 asp-net-mvc
+
+
+
+
+
+
+

@@ -1,0 +1,116 @@
+single project ASP.NET 
+
+layers of the web application 
+User interface 
+business logic
+data access 
+
+
+MVC is used model , voew , controle, data and services
+
+
+presentnaion detials == view folder //  limited as much as possible 
+data access implimentation == data folder //  limited to the class kept in the data folder 
+bussniss logic should reside in ther services and classess with in the models
+
+DOM DATA ON=BJECT MODEL
+its a tree like structre that contains all the elements and the propwerties of the element Why DOM is required?
+
+
+Why Dom ?
+
+HTML is used to structure the web pages and Javascript is used to add behavior to our web 
+When an HTML file is loaded into the browser, the javascript can not understand the HTML document directly. 
+So, a corresponding document is created(DOM). 
+DOM is basically the representation of the same HTML document but in a different format with the use of objects.
+Javascript interprets DOM easily i.e javascript can not understand the tags(<h1>H</h1>) in HTML document but can understand object h1 in DOM.
+Now, Javascript can access each of the objects (h1, p, etc) by using different functions.
+ 	
+
+render() method 
+In class-based components, the render() method is the only required and most important method of all in-built life-cycle hooks/methods.
+ In the render() method, we can read props and state and return our JSX code to the root component of our app.
+ In the render() method, we cannot change the state, and we cannot cause side effects( such as making an HTTP request to the webserver).
+
+https://www.geeksforgeeks.org/reactjs-reactdom/ 
+refer the above link to kmow about te render 
+
+composing components 
+
+pass data 
+raise and handle events 
+multiple components in sync 
+functional components 
+life cycle hooks 
+
+we have to download react developers tools in extenction it will help with instances and props of the components 
+$r and the $0 in the components will show the instance of the counter components and buttons 
+$r.render() it will call the render method it will get the react.element type is div 
+$0.click() it will call the click event and increments the value 
+
+
+Props vs data 
+props include the data that we give to the component 
+state include data that is local or private to taht component  we cant access this 
+
+it is used for building user interface 
+libraries is used in js 
+it is used for front end 
+independetn isolsated componentsv
+ 
+react element 
+dom elemenet 
+light weight represetn aof memory
+
+component is a block of code or a 
+isolated user inteface 
+(user interface ) And all the tiny user interface is combained to form a huge one 
+child components 
+
+after installing the react run the commmend
+create-react-app My-app
+after running there will be development server , WebPack for bundling our files , Babel for compli 
+webPack to store the files and Babel 
+
+after run NPM START
+
+
+import React from 'react';
+import ReactDom from 'react-dom';
+
+const element =<h1>hello there shreyas how u doing</h1>
+
+ReactDom.render(element,document.getElementById('root'));
+
+console.log(element);
+model reloading/////////
+
+after this 
+in index.js we wil import the bootstrap model 
+npm -i bootstrap// run this command and then import the file in index.js
+
+create a folder called component and in component create counter.jsx
+install the package //simple sinppit 
+imrc import react componrnt 
+cc for create class 
+
+
+the code will be linek this 
+import React, {Component} from 'react';`
+class Counter extends Component{
+state={}
+render(){
+return<h1> heelo ther shreyas </h1>;
+
+}
+}
+
+export default Counter;
+
+
+
+	
+
+
+
+

@@ -1,0 +1,30 @@
+
+
+ssh -i .\demo_key.pem azureuser@172.174.203.43
+
+uname --all 
+sudo -i   comes to my directory 
+apt update 
+
+apt install --yes curl
+apt install --yes curl
+curl http://google.co.in
+ azuer 
+
+ssh -i .\docker-demo_key.pem azureuser@13.90.241.23
+
+the above code is to get into the vm
+
+https://learn.microsoft.com/en-us/cli/azure/install-azure-cli-linux?pivots=apt
+
+follow this link to connect ti th azure to the container 
+
+
+git -version 
+git clone http:::; _______________________.git
+po
+
+ssh -i .\docker-demo_key.pem azureuser@13.90.241.23
+az --version
+npx create-react-app react-azure
+	
